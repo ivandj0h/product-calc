@@ -3,7 +3,7 @@ package ivandjoh.online.calculator.controller;
 import ivandjoh.online.calculator.dao.Product;
 import ivandjoh.online.calculator.dto.ProductDto;
 import ivandjoh.online.calculator.dto.ProductDtoRequest;
-import ivandjoh.online.calculator.dto.ProductDtoResponse;
+import ivandjoh.online.calculator.dto.ProductDtoPerUnitResponse;
 import ivandjoh.online.calculator.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +33,7 @@ public class TransactionController {
     }
 
     @PostMapping(value = "/product/transaction/{id}", consumes = "application/json")
-    public ResponseEntity<ProductDtoResponse> postTransaction(
+    public ResponseEntity<?> postTransaction(
             @RequestBody ProductDtoRequest purchaseQuantity,
             @PathVariable Long id
     ) {
