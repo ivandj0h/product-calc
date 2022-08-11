@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface TransactionService {
     ResponseEntity<List<Product>> getAllProducts();
+
+    ResponseEntity<Product> addNewProduct(Product product);
+
+    ResponseEntity<Product> getProduct(Long id);
 }

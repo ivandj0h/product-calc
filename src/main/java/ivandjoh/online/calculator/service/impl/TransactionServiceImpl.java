@@ -25,4 +25,24 @@ public class TransactionServiceImpl implements TransactionService {
             return ResponseEntity.badRequest().build();
         }
     }
+
+    @Override
+    public ResponseEntity<Product> addNewProduct(Product product) {
+        try {
+            Product newProduct = productRepository.save(product);
+            return ResponseEntity.ok(newProduct);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @Override
+    public ResponseEntity<Product> getProduct(Long id) {
+        try {
+            Product product = productRepository.findById(id).get();
+            return ResponseEntity.ok(product);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
