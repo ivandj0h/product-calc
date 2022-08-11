@@ -3,7 +3,6 @@ package ivandjoh.online.calculator.service;
 import ivandjoh.online.calculator.dao.Product;
 import ivandjoh.online.calculator.dto.ProductDto;
 import ivandjoh.online.calculator.dto.ProductDtoRequest;
-import ivandjoh.online.calculator.dto.ProductDtoPerUnitResponse;
 import org.springframework.http.ResponseEntity;
 
 public interface TransactionService {
