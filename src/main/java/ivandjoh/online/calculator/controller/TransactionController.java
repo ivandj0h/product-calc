@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1")
 public class TransactionController {
 
@@ -31,7 +32,10 @@ public class TransactionController {
     }
 
     @PostMapping("/products/transaction")
-    public String postTransaction() {
-        return "transaction";
+    public ResponseEntity<?> postTransaction(
+            @RequestBody int purchaseQuantity,
+            @RequestParam Long id
+    ) {
+        return transactionService.postTransaction(id, purchaseQuantity);
     }
 }

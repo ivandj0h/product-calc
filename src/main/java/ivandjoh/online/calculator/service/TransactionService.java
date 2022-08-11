@@ -11,4 +11,6 @@ public interface TransactionService {
     ResponseEntity<Product> addNewProduct(Product product);
 
     ResponseEntity<Product> getProduct(Long id);
+
+    ResponseEntity<?> postTransaction(Long id, int purchaseQuantity);
 }
