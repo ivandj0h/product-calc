@@ -1,16 +1,17 @@
 package ivandjoh.online.calculator.service;
 
 import ivandjoh.online.calculator.dao.Product;
+import ivandjoh.online.calculator.dto.ProductDto;
+import ivandjoh.online.calculator.dto.ProductDtoRequest;
+import ivandjoh.online.calculator.dto.ProductDtoResponse;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
-
 public interface TransactionService {
-    ResponseEntity<List<Product>> getAllProducts();
+    ResponseEntity<ProductDto> getAllProducts();
 
     ResponseEntity<Product> addNewProduct(Product product);
 
     ResponseEntity<Product> getProduct(Long id);
 
-    ResponseEntity<?> postTransaction(Long id, int purchaseQuantity);
+    ResponseEntity<ProductDtoResponse> postTransaction(Long id, ProductDtoRequest purchaseQuantity);
 }
