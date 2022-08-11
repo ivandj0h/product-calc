@@ -65,7 +65,7 @@ public class TransactionServiceImpl implements TransactionService {
         ProductDtoPerUnitResponse response = new ProductDtoPerUnitResponse();
         try {
             Product product = productRepository.findById(id).get();
-            if(purchaseQuantity.getPurchaseQuantity() > 1) {
+            if(purchaseQuantity.getPurchaseQuantity() > 0) {
                 response.setId(product.getId());
                 response.setProductName(product.getProductName());
                 response.setPrice(product.getPrice());
